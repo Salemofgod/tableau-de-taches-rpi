@@ -1,40 +1,30 @@
+// src/view/tasks-list-component.js
 import { createElement } from '../framework/render.js';
+import { StatusNames, StatusClasses } from '../const.js';
 
-function createTaskListComponentTemplate(title, tasks = []) {
-  const tasksHtml = tasks.map(task => 
-    `<li class="task-card">${task}</li>`
-  ).join('');
-
-  return (
-    `<div class="column">
-      <div class="column-title ${getColumnClass(title)}">${title}</div>
-      <ul class="items-list">
-        ${tasksHtml}
+function createTasksListComponentTemplate(status) {
+  const title = StatusNames[status] || status;
+  const cssClass = StatusClasses[status] || '';
+  
+  return `
+    <div class="column">
+      <div class="column-title ${cssClass}">${title}</div>
+      <ul class="items-list" data-status="${status}">
+        <!-- Les tâches seront ajoutées ici -->
       </ul>
-      ${title === 'Corbeille' ? '<button class="empty-btn">Vider</button>' : ''}
-    </div>`
-  );
+      ${status === 'trash' ? '<div class="trash-actions"></div>' : ''}
+    </div>
+  `;
 }
 
-function getColumnClass(title) {
-  const classes = {
-    'En Attente': 'pending',
-    'En Cours': 'active',
-    'Terminées': 'completed',
-    'Corbeille': 'deleted'
-  };
-  return classes[title] || '';
-}
-
-export default class TaskListComponent {
-  constructor(title, tasks = []) {
-    this.title = title;
-    this.tasks = tasks;
+export default class TasksListComponent {
+  constructor(status) {
+    this.status = status;
     this.element = null;
   }
 
   getTemplate() {
-    return createTaskListComponentTemplate(this.title, this.tasks);
+    return createTasksListComponentTemplate(this.status);
   }
 
   getElement() {
