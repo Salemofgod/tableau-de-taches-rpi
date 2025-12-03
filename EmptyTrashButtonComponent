@@ -1,0 +1,31 @@
+// src/view/empty-trash-button-component.js
+import { createElement } from '../framework/render.js';
+
+function createEmptyTrashButtonTemplate() {
+  return `
+    <button class="empty-btn" type="button" aria-label="Vider la corbeille">
+      Vider la corbeille
+    </button>
+  `;
+}
+
+export default class EmptyTrashButtonComponent {
+  constructor() {
+    this.element = null;
+  }
+
+  getTemplate() {
+    return createEmptyTrashButtonTemplate();
+  }
+
+  getElement() {
+    if (!this.element) {
+      this.element = createElement(this.getTemplate());
+    }
+    return this.element;
+  }
+
+  removeElement() {
+    this.element = null;
+  }
+}
