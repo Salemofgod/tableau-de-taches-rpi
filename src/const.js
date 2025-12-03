@@ -1,14 +1,14 @@
 // src/const.js
 export const StatusNames = {
-  backlog: 'En Attente',
+  backlog: 'En Attente',     
   processing: 'En Cours',
   done: 'Terminées',
-  trash: 'Corbeille'
+  trash: 'Corbeille'        
 };
 
 export const StatusClasses = {
   backlog: 'pending',
-  processing: 'active',
+  processing: 'active', 
   done: 'completed',
   trash: 'deleted'
 };
