@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de tâches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        Tableau de tâches
+    </header>
+
+    <div class="wrapper">
+        <div class="create-task-panel">
+            <h2>Nouvelle tâche</h2>
+            <div class="input-container">
+                <input type="text" class="task-field" placeholder="Nom de la tâche..." />
+                <button class="create-btn">Ajouter</button>
+            </div>
+        </div>
+
+        <div class="board-columns">
+            <div class="column">
+                <div class="column-title pending">En attente</div>
+                <ul class="items-list">
+                    <li class="task-card">Apprendre HTML</li>
+                    <li class="task-card">Pratiquer CSS</li>
+                    <li class="task-card">Comprendre Git</li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <div class="column-title active">En cours</div>
+                <ul class="items-list">
+                    <li class="task-card">Lire la documentation JavaScript</li>
+                    <li class="task-card">Construire un mini-projet</li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <div class="column-title completed">Terminé</div>
+                <ul class="items-list">
+                    <li class="task-card">Installer VS Code</li>
+                    <li class="task-card">Configurer GitHub</li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <div class="column-title deleted">Corbeille</div>
+                <ul class="items-list">
+                    <li class="task-card">Regarder Netflix</li>
+                    <li class="task-card">Scroller Instagram</li>
+                </ul>
+                <button class="empty-btn">Vider</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
