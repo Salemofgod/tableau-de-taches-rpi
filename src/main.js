@@ -1,3 +1,4 @@
+console.log('=== DÉBUT DU SCRIPT ===');
 import HeaderComponent from './view/header-component.js';
 import FormAddTaskComponent from './view/form-add-task-component.js';
 import TaskboardComponent from './view/taskboard-component.js';
@@ -33,3 +34,4 @@ Object.entries(tasksData).forEach(([title, tasks]) => {
 });
 
 console.log('Application chargée avec succès ! Tous les composants sont rendus.');
+console.log('=== FIN DU SCRIPT ===');
