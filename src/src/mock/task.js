@@ -44,20 +44,5 @@ export const tasks = [
     id: "9",
     title: "Scroller Instagram",
     status: "trash",
-  },
-  {
-    id: "10",
-    title: "Réviser les algorithmes",
-    status: "backlog",
-  },
-  {
-    id: "11",
-    title: "Créer un portfolio",
-    status: "processing",
-  },
-  {
-    id: "12",
-    title: "Apprendre React",
-    status: "done",
   }
 ];
