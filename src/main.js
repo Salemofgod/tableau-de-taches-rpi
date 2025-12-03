@@ -1,37 +1,29 @@
-console.log('=== DÉBUT DU SCRIPT ===');
+// src/main.js
 import HeaderComponent from './view/header-component.js';
 import FormAddTaskComponent from './view/form-add-task-component.js';
-import TaskboardComponent from './view/taskboard-component.js';
-import TaskListComponent from './view/tasklist-component.js';
+import TasksBoardPresenter from './presenter/tasks-board-presenter.js';
+import TasksModel from './model/tasks-model.js';
 import { render, RenderPosition } from './framework/render.js';
 
-// Données des tâches (temporaires)
-const tasksData = {
-  'En Attente': ['Apprendre HTML', 'Pratiquer CSS', 'Comprendre Git'],
-  'En Cours': ['Lire la doc JavaScript', 'Construire un mini projet'],
-  'Terminées': ['Installer VS Code', 'Configurer GitHub'],
-  'Corbeille': ['Regarder Netflix', 'Scroller Instagram']
-};
-
+// Sélection des conteneurs
 const bodyContainer = document.querySelector('.board-app');
 const formContainer = document.querySelector('.add-task');
-const taskboardContainer = document.querySelector('.taskboard');
+const tasksBoardContainer = document.querySelector('.taskboard');
 
-// Rendre l'en-tête
-render(new HeaderComponent(), bodyContainer, RenderPosition.BEFOREBEGIN);
+// Initialisation du modèle
+const tasksModel = new TasksModel();
 
-// Rendre le formulaire
-render(new FormAddTaskComponent(), formContainer);
-
-// Rendre le tableau de tâches
-const taskboardComponent = new TaskboardComponent();
-render(taskboardComponent, taskboardContainer);
-
-// Rendre les 4 colonnes de tâches
-const boardColumns = taskboardComponent.getElement().querySelector('.board-columns');
-Object.entries(tasksData).forEach(([title, tasks]) => {
-  render(new TaskListComponent(title, tasks), boardColumns);
+// Initialisation du présentateur
+const tasksBoardPresenter = new TasksBoardPresenter({
+  boardContainer: tasksBoardContainer,
+  tasksModel,
 });
 
-console.log('Application chargée avec succès ! Tous les composants sont rendus.');
-console.log('=== FIN DU SCRIPT ===');
+// Rendu des composants statiques
+render(new HeaderComponent(), bodyContainer, RenderPosition.BEFOREBEGIN);
+render(new FormAddTaskComponent(), formContainer);
+
+// Initialisation du tableau de tâches
+tasksBoardPresenter.init();
+
+console.log('=== APPLICATION CHARGÉE AVEC SUCCÈS ===');
