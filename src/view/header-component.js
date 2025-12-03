@@ -1,23 +1,22 @@
 import { createElement } from '../framework/render.js';
-import TaskListComponent from './tasklist-component.js';
 
-function createTaskboardComponentTemplate() {
+function createHeaderComponentTemplate() {
   return (
-    `<section class="taskboard">
-      <div class="board-columns">
-        <!-- Les colonnes seront ajoutées dynamiquement -->
+    `<header class="board-app__header">
+      <div class="board-app__inner">
+        <h1>Tableau de Tâches - Bounzeky Gnanga Fannelle Salem</h1>
       </div>
-    </section>`
+    </header>`
   );
 }
 
-export default class TaskboardComponent {
+export default class HeaderComponent {
   constructor() {
     this.element = null;
   }
 
   getTemplate() {
-    return createTaskboardComponentTemplate();
+    return createHeaderComponentTemplate();
   }
 
   getElement() {
@@ -31,4 +30,3 @@ export default class TaskboardComponent {
     this.element = null;
   }
 }
-
