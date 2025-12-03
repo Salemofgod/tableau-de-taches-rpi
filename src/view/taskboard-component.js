@@ -1,23 +1,24 @@
+// src/view/tasks-board-component.js
 import { createElement } from '../framework/render.js';
-import TaskListComponent from './tasklist-component.js';
+import { StatusOrder } from '../const.js';
 
-function createTaskboardComponentTemplate() {
-  return (
-    `<section class="taskboard">
+function createTasksBoardComponentTemplate() {
+  return `
+    <section class="taskboard">
       <div class="board-columns">
-        <!-- Les colonnes seront ajoutées dynamiquement -->
+        <!-- Les listes de tâches seront ajoutées ici -->
       </div>
-    </section>`
-  );
+    </section>
+  `;
 }
 
-export default class TaskboardComponent {
+export default class TasksBoardComponent {
   constructor() {
     this.element = null;
   }
 
   getTemplate() {
-    return createTaskboardComponentTemplate();
+    return createTasksBoardComponentTemplate();
   }
 
   getElement() {
@@ -31,4 +32,3 @@ export default class TaskboardComponent {
     this.element = null;
   }
 }
-
