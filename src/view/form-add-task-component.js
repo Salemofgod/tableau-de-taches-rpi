@@ -5,7 +5,7 @@ function createFormAddTaskComponentTemplate() {
     `<form class="add-task__form" aria-label="Formulaire d'ajout de tâche">
       <div class="add-task__input-wrapper">
         <label for="add-task">Nouvelle tâche</label>
-        <input type="text" name="task-name" id="add-task" placeholder="Nom de la tâche..." required>
+        `<input type="text" name="task-name" id="add-task" placeholder="Nom de la tâche..." required>`
       </div>
       <button class="add-task__button button" type="submit">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
