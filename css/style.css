@@ -1,1 +1,81 @@
+/* ===== STYLES POUR LA STRUCTURE COMPOSANT ===== */
+.board-app {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #fff5f7;
+    color: #7a4f76;
+    line-height: 1.6;
+    min-height: 100vh;
+}
 
+.board-app__header {
+    background: linear-gradient(135deg, #ffb6c1, #ffc2d1);
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #7a4f76;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+}
+
+.board-app__inner {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Style pour le formulaire */
+.add-task__form {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    border: 1px solid #ffc2d1;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.add-task__input-wrapper {
+    flex: 1;
+}
+
+.add-task__input-wrapper label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #d94f8c;
+}
+
+.add-task__input-wrapper input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ffc2d1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7a4f76;
+    font-size: 1rem;
+    outline: none;
+}
+
+.add-task__button {
+    padding: 0.7rem 1.2rem;
+    background: #d94f8c;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.add-task__button:hover {
+    background: #c73e7b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 79, 140, 0.4);
+}
